@@ -8,10 +8,13 @@ namespace Tron.Logic.Movements
 {
     public class Right : IMovement
     {
-        public void Move()
+        public List<IMagnitude> ReturnMagnitudes()
         {
-            
+            var magnitudes = new List<IMagnitude>();
+            magnitudes.Add(new Magnitude(1, 0));
+            return magnitudes;
         }
+
 
         public string GetIdentifier()
         {

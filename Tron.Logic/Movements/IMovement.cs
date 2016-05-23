@@ -1,8 +1,10 @@
-﻿namespace Tron.Logic.Movements
+﻿using System.Collections.Generic;
+
+namespace Tron.Logic.Movements
 {
     public interface IMovement
     {
-        void Move();
+        List<IMagnitude> ReturnMagnitudes();
         string GetIdentifier();
         string PlayerName { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Tron.Logic.GameLogic
 {
-    interface IPlayer
+    public interface IPlayer
     {
     }
 }

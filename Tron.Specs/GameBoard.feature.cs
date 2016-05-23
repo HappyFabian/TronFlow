@@ -80,9 +80,27 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.Given("I have width 5, height 6, String \'s\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("I press create a new GameBoard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I create a new GameBoard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
  testRunner.Then("each tile in the gameboard Should be \'s\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Mark Spot")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GameBoard")]
+        public virtual void MarkSpot()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mark Spot", ((string[])(null)));
+#line 10
+this.ScenarioSetup(scenarioInfo);
+#line 11
+ testRunner.Given("I have a GameBoard of width 5, height 6, with initial value of \'s\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.When("I mark spot x 0 y 0 and spot x 3 y 3 with \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("Spot x 0 y 0 and spot x 3 y3 should be \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

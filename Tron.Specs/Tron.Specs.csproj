@@ -65,7 +65,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameBoard.feature</DependentUpon>
     </Compile>
-    <Compile Include="GameBoardSteps.cs" />
+    <Compile Include="GameBoard_InitializeBoard_Steps.cs" />
+    <Compile Include="GameBoard_MarkSpot_Steps.cs" />
     <Compile Include="ParserTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

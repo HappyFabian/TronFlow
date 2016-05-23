@@ -1,8 +1,6 @@
 ﻿Feature: ParserTests
 	In order to check parser features
 	creeation of parser class
-<<<<<<< HEAD
-=======
 
 
 Scenario: I received up movement for player red
@@ -25,4 +23,3 @@ Scenario: I received left movement for player blue
 	When Input is parsed
 	Then The function should return a 'Left' movement and 'azul' Player
 
->>>>>>> e453957932ac717ad798b8930cad00096d153951

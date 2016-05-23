@@ -22,9 +22,14 @@ namespace Tron.Logic.GameLogic
             }
         }
 
-        public override void MarkSpot(int x_coor, int y_coor, object value)
+        public override object[,] ReturnMap()
         {
-            Map[x_coor, y_coor] = value;
+            return Map;
+        }
+
+        public override void MarkSpot(int xCoordinate, int yCoordinate, object value)
+        {
+            Map[xCoordinate, yCoordinate] = value;
         }
     }
 }

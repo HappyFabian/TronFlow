@@ -8,6 +8,7 @@ namespace Tron.Logic.GameLogic
         public GameBoard(int boardWidth, int boardHeight, object initialValue)
         {
             Map = new object[boardWidth,boardHeight];
+            defaultObject = initialValue;
             InitializeMap(initialValue);
         }
 

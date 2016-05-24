@@ -49,8 +49,10 @@
     <Compile Include="GameLogic\Player.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="Movements\Down.cs" />
-    <Compile Include="Movements\IMovement.cs" />
+    <Compile Include="GameLogic\IMagnitude.cs" />
+    <Compile Include="GameLogic\IMovement.cs" />
     <Compile Include="Movements\Left.cs" />
+    <Compile Include="GameLogic\Magnitude.cs" />
     <Compile Include="Movements\Right.cs" />
     <Compile Include="Movements\Up.cs" />
     <Compile Include="ParserService\FileReader.cs" />

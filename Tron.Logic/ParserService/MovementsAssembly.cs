@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Tron.Logic.GameLogic;
 using Tron.Logic.Movements;
 
 namespace Tron.Logic.ParserService

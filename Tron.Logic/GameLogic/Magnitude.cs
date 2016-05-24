@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tron.Logic.Movements
+namespace Tron.Logic.GameLogic
 {
     public class Magnitude : IMagnitude
     {
@@ -17,6 +17,9 @@ namespace Tron.Logic.Movements
             YMagnitude = ymagnitude;
         }
 
-      
+        public Tuple<int, int> returnValues()
+        {
+            return new Tuple<int, int>(XMagnitude, YMagnitude);
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace Tron.Logic.GameLogic
     {
         public object[,] Map;
 
+        public object defaultObject { set; get; }
+
         public abstract void InitializeMap(object value);
 
         public abstract object[,] ReturnMap();

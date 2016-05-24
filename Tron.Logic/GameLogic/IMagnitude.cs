@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tron.Logic.Movements
+namespace Tron.Logic.GameLogic
 {
     public interface IMagnitude
     {
-    
+        Tuple<int, int> returnValues();
     }
 }

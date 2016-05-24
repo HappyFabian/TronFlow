@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Tron.Logic.Movements
+namespace Tron.Logic.GameLogic
 {
     public interface IMovement
     {

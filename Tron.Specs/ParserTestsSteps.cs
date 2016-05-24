@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 using Tron.Logic.Movements;
 using Tron.Logic.ParserService;
+using Tron.Logic.GameLogic;
 
 namespace Tron.Specs
 {

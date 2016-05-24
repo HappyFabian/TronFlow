@@ -43,6 +43,7 @@ namespace Tron.Specs
                 }
             }
 
+            Console.WriteLine(gameBoard.Map.GetLength(0));
             Assert.AreEqual(expectedResult, actualResult,"The Board was not generated properly.");
         }
     }

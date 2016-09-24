@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleRenderer.cs" />
+    <Compile Include="Decorator\DoubleMovementDecorator.cs" />
+    <Compile Include="Decorator\MovementDecorator.cs" />
     <Compile Include="GameLogic\Color.cs" />
     <Compile Include="GameLogic\Coordinate.cs" />
     <Compile Include="GameLogic\ICoordinate.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="ParserService\IParser.cs" />
     <Compile Include="ParserService\MovementsAssembly.cs" />
     <Compile Include="ParserService\Parser.cs" />
+    <Compile Include="Decorator\PlayerDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

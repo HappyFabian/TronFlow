@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tron.Logic.GameLogic;
 
-namespace Tron.Logic.Player
+namespace Tron.Logic.Decorator
 {
     public abstract class PlayerDecorator : IPlayer
     {
@@ -17,25 +17,25 @@ namespace Tron.Logic.Player
         }
         public string playerName
         {
-            get { _player.playerName }
+            get { return _player.playerName; }
             set { _player.playerName = value; }
         }
 
         public char playerIcon
         {
-            get { _player.playerIcon }
+            get { return _player.playerIcon; }
             set { _player.playerIcon = value; }
         }
 
         public char playerTrail
         {
-            get { _player.playerTrail }
+            get { return _player.playerTrail; }
             set { _player.playerTrail = value; }
         }
 
         public ICoordinate currentCoordinate
         {
-            get { _player.currentCoordinate }
+            get { return _player.currentCoordinate; }
             set { _player.currentCoordinate = value; }
         }
     }

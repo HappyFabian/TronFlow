@@ -30,7 +30,6 @@ namespace Tron.Specs
         public void ThenTheFunctionShouldReturnAMovementAndPlayer(string p0, string p1)
         {
             Assert.AreEqual(p0, _movement.GetType().Name);
-            Assert.AreEqual(p1, _movement.PlayerName);
         }
 
     }

@@ -26,7 +26,7 @@ namespace Tron.WinFormsImplementation
         {
             var players = new List<PlayerDAO>();
             foreach(DataGridViewRow row in dataGridView1.Rows){
-                var newPlayer = new PlayerDAO(row.Cells[0].ToString(), row.Cells[1].ToString());
+                var newPlayer = new PlayerDAO(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
                 players.Add(newPlayer);
             }
 

@@ -12,8 +12,8 @@ namespace Tron.Logic.ParserService
         public static Dictionary<string, Type> Load()
         {
             var dictionary = new Dictionary<string, Type>();
-            var q = GetTypes();
-            foreach (var movementType in q.ToList())
+            var movementTypes = GetTypes();
+            foreach (var movementType in movementTypes.ToList())
             {
                 var instance = (IMovement)Activator.CreateInstance(movementType);
                 dictionary.Add(instance.GetIdentifier(), movementType);

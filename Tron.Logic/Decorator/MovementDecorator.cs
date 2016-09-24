@@ -9,13 +9,13 @@ namespace Tron.Logic.Decorator
 {
     public abstract class MovementDecorator : IMovement
     {
-        private IMovement _movement;
+        protected IMovement _movement;
 
         public MovementDecorator(IMovement movement)
         {
             _movement = movement;
         }
-        public void Prepare()
+        public virtual void Prepare()
         {
             _movement.Prepare();
         }
@@ -32,12 +32,12 @@ namespace Tron.Logic.Decorator
             }
         }
 
-        public IMagnitudeComposite ReturnMagnitudes()
+        public virtual IMagnitudeComposite ReturnMagnitudes()
         {
             return _movement.ReturnMagnitudes();
         }
 
-        public string GetIdentifier()
+        public virtual string GetIdentifier()
         {
             return _movement.GetIdentifier();
         }

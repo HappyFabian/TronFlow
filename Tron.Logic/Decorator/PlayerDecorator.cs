@@ -21,13 +21,13 @@ namespace Tron.Logic.Decorator
             set { _player.playerName = value; }
         }
 
-        public char playerIcon
+        public ITile playerIcon
         {
             get { return _player.playerIcon; }
             set { _player.playerIcon = value; }
         }
 
-        public char playerTrail
+        public ITile playerTrail
         {
             get { return _player.playerTrail; }
             set { _player.playerTrail = value; }
@@ -38,5 +38,6 @@ namespace Tron.Logic.Decorator
             get { return _player.currentCoordinate; }
             set { _player.currentCoordinate = value; }
         }
+
     }
 }

@@ -8,7 +8,7 @@ namespace Tron.Logic.GameLogic
 {
     class Player : IPlayer
     {
-        public Player(ICoordinate startingCoordinate, string playerName,char playerIcon, char playerTrail)
+        public Player(ICoordinate startingCoordinate, string playerName, ITile playerIcon, ITile playerTrail)
         {
             this.currentCoordinate = startingCoordinate;
             this.playerName = playerName;
@@ -22,7 +22,7 @@ namespace Tron.Logic.GameLogic
             set {currentCoordinate = value;}
         }
 
-        public char playerIcon
+        public ITile playerIcon
         {
             get { return playerIcon; }
             set { playerIcon = value; }
@@ -34,7 +34,7 @@ namespace Tron.Logic.GameLogic
             set {playerName = value;}
         }
 
-        public char playerTrail
+        public ITile playerTrail
         {
             get { return playerTrail; }
             set{ playerTrail = value;}

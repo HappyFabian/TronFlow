@@ -12,7 +12,11 @@ namespace Tron.Logic.GameLogic
         ITile playerIcon{ get; set; }
         ITile playerTrail { get; set; }
 
+        
+
         ICoordinate currentCoordinate { get; set; }
+
+        void updateCoordinate(ICoordinate newCoordinate);
         
     }
 }

@@ -39,5 +39,10 @@ namespace Tron.Logic.GameLogic
             get { return playerTrail; }
             set{ playerTrail = value;}
         }
+
+        public void updateCoordinate(ICoordinate newCoordinate)
+        {
+            currentCoordinate = newCoordinate;
+        }
     }
 }

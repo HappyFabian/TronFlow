@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.4.1.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +103,10 @@
     <ProjectReference Include="..\Tron.DataAccessObjects\Tron.DataAccessObjects.csproj">
       <Project>{9ee327e5-1891-460a-bd58-9ce927bafc72}</Project>
       <Name>Tron.DataAccessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tron.Logic\Tron.Logic.csproj">
+      <Project>{3a63a932-b1af-4952-a20c-b83cd06f0691}</Project>
+      <Name>Tron.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

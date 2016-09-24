@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    class Player : IPlayer
+    public class Player : IPlayer
     {
-        public Player(ICoordinate startingCoordinate, string playerName, ITile playerIcon, ITile playerTrail)
+        public Player(ICoordinate startingCoordinate, string playerName, string color)
         {
             this.currentCoordinate = startingCoordinate;
             this.playerName = playerName;

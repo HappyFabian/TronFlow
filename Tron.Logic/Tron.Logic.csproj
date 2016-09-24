@@ -56,6 +56,7 @@
     <Compile Include="GameLogic\Magnitudes.cs" />
     <Compile Include="GameLogic\Map.cs" />
     <Compile Include="GameLogic\Player.cs" />
+    <Compile Include="GameLogic\Tile.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="MovementFactory.cs" />
     <Compile Include="Movements\Down.cs" />

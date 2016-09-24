@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    class Magnitude : IMagnitude
+    public class Magnitude : IMagnitude
     {
         ICoordinate coordinates;
 
-        Magnitude(ICoordinate coordinate)
+        public Magnitude(ICoordinate coordinate)
         {
             coordinates = coordinate;
         }

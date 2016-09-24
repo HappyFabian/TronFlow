@@ -4,7 +4,7 @@ namespace Tron.Logic.GameLogic
 {
     public interface IMovement
     {
-        List<IMagnitude> ReturnMagnitudes();
+        IMagnitudeComposite ReturnMagnitudes();
         string GetIdentifier();
         string PlayerName { get; set; }
     }

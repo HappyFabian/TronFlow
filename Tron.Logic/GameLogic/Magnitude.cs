@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    public class Magnitude : IMagnitude
+    class Magnitude : IMagnitude
     {
-        public int XMagnitude { set;  get; }
-        public int YMagnitude { set;  get; }
+        ICoordinate coordinates;
 
-        public Magnitude(int xmagnitude, int ymagnitude)
+        Magnitude(ICoordinate coordinate)
         {
-            XMagnitude = xmagnitude;
-            YMagnitude = ymagnitude;
+            coordinates = coordinate;
         }
 
-        public Tuple<int, int> returnValues()
+        public ICoordinate returnValues()
         {
-            return new Tuple<int, int>(XMagnitude, YMagnitude);
+            return coordinates;
         }
     }
 }

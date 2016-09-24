@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    public interface IMagnitude
+    public enum Color
     {
-        
-        ICoordinate returnValues();
+        RED, GREEN, BLUE, YELLOW, GREY, PINK, BLACK, ORANGE
     }
 }

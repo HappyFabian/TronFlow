@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    public interface IMagnitude
+    public interface ICoordinate
     {
-        
-        ICoordinate returnValues();
+        int coordinateX { get; set; }
+        int coordinateY { get; set; }
+
+        void updateCoordinate(int x, int y);
     }
 }

@@ -9,8 +9,8 @@ namespace Tron.Logic.GameLogic
     public interface IPlayer
     {
         string playerName { get; set; }
-        char playerIcon{ get; set; }
-        char playerTrail { get; set; }
+        ITile playerIcon{ get; set; }
+        ITile playerTrail { get; set; }
 
         ICoordinate currentCoordinate { get; set; }
         

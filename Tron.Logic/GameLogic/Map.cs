@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    class Map : IMap
+    public class Map : IMap
     {
         public ITile[,] mapArray
         {

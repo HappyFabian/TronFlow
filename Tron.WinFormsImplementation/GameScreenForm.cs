@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tron.DataAccessObjects;
 
 namespace Tron.WinFormsImplementation
 {
     public partial class GameScreenForm : Form
     {
-        public GameScreenForm(int rowsCount, int columnsCount)
+        public GameScreenForm(int rowsCount, int columnsCount, List<PlayerDAO> players)
         {
             InitializeComponent();
             var visualBoard = new TableLayoutPanel();
@@ -29,6 +30,11 @@ namespace Tron.WinFormsImplementation
                 visualBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, (100 / columnsCount)));
             }
             splitContainer1.Panel1.Controls.Add(visualBoard);
+        }
+
+        private void btnNextMovement_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tron.DataAccessObjects;
 
 namespace Tron.WinFormsImplementation
 {
@@ -23,12 +24,13 @@ namespace Tron.WinFormsImplementation
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            var players = new List<String>();
+            var players = new List<PlayerDAO>();
             foreach(DataGridViewRow row in dataGridView1.Rows){
-                players.Add(row.Cells[0].ToString());
+                var newPlayer = new PlayerDAO(row.Cells[0].ToString(), row.Cells[1].ToString());
+                players.Add(newPlayer);
             }
-            
-            var gameScreenForm = new GameScreenForm(RowsCount, ColumsCount);
+
+            var gameScreenForm = new GameScreenForm(RowsCount, ColumsCount, players);
             gameScreenForm.Show();
         }
     }

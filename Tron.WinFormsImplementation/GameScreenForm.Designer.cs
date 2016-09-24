@@ -56,6 +56,7 @@
             this.btnNextMovement.TabIndex = 1;
             this.btnNextMovement.Text = "Next";
             this.btnNextMovement.UseVisualStyleBackColor = true;
+            this.btnNextMovement.Click += new System.EventHandler(this.btnNextMovement_Click);
             // 
             // GameScreenForm
             // 

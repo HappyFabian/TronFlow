@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.PlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +39,8 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PlayerName});
+            this.PlayerName,
+            this.ColorColumn});
             this.dataGridView1.Location = new System.Drawing.Point(21, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
@@ -59,6 +61,20 @@
             this.PlayerName.HeaderText = "NameColumn";
             this.PlayerName.Name = "PlayerName";
             // 
+            // ColorColumn
+            // 
+            this.ColorColumn.HeaderText = "Color";
+            this.ColorColumn.Items.AddRange(new object[] {
+            "RED",
+            "GREEN",
+            "BLUE",
+            "YELLOW",
+            "GREY",
+            "PINK",
+            "BLACK",
+            "ORANGE"});
+            this.ColorColumn.Name = "ColorColumn";
+            // 
             // AddUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,7 +92,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerName;
         private System.Windows.Forms.Button btnStartGame;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlayerName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColorColumn;
     }
 }

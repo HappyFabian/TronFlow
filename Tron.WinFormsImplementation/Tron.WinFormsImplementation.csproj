@@ -50,12 +50,6 @@
     <Compile Include="AddUsersForm.Designer.cs">
       <DependentUpon>AddUsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tron.DataAccessObjects\Tron.DataAccessObjects.csproj">
+      <Project>{9ee327e5-1891-460a-bd58-9ce927bafc72}</Project>
+      <Name>Tron.DataAccessObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

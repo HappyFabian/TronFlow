@@ -5,6 +5,7 @@ using TechTalk.SpecFlow;
 using Tron.Logic.Movements;
 using Tron.Logic.ParserService;
 using Tron.Logic.GameLogic;
+using Tron.Logic;
 
 namespace Tron.Specs
 {
@@ -16,7 +17,7 @@ namespace Tron.Specs
         [Given(@"the input '(.*)'")]
         public void GivenTheInput(string p0)
         {
-            _parser = new Parser(new TestReader(p0));
+            _parser = new Parser(new TestReader(p0), new MovementFactory());
         }
         
         [When(@"Input is parsed")]

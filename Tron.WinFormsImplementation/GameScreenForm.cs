@@ -20,7 +20,7 @@ namespace Tron.WinFormsImplementation
             visualBoard.RowCount = rowsCount;
             visualBoard.CellBorderStyle = TableLayoutPanelCellBorderStyle.OutsetDouble;
             visualBoard.Dock = DockStyle.Fill;
-            for (int i = 0; i < rowsCount;i++ )
+            for (int i = 0; i < rowsCount;i++)
             {
                 visualBoard.RowStyles.Add(new ColumnStyle(SizeType.Percent, (100/rowsCount)));
             }

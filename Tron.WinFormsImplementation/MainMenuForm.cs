@@ -21,8 +21,8 @@ namespace Tron.WinFormsImplementation
         {
             int rowsCount = decimal.ToInt32(this.numericUpDownRows.Value);
             int columnsCount = decimal.ToInt32(this.numericUpDownColumns.Value);
-            var gameScreenForm = new GameScreenForm(rowsCount, columnsCount);
-            gameScreenForm.Show();
+            var addUsersForm = new AddUsersForm(rowsCount, columnsCount);
+            addUsersForm.Show();
         }
     }
 }

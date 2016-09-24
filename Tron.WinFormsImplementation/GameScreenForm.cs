@@ -30,9 +30,19 @@ namespace Tron.WinFormsImplementation
                 visualBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, (100 / columnsCount)));
             }
             splitContainer1.Panel1.Controls.Add(visualBoard);
+            for (int i = 0; i < players.Count - 1; i++)
+            {
+                listBox1.Items.Add(players[i].Name);
+            }
+            
         }
 
         private void btnNextMovement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

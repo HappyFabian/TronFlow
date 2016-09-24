@@ -10,6 +10,8 @@ namespace Tron.DataAccessObjects
     {
         public string Name { get; set; }
         public string Color { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
 
         public PlayerDAO(string name, string color)
         {

@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tron.Logic.ParserService;
 
 namespace Tron.Logic.GameLogic
 {
     class GameHandler : IGameHandler
     {
+        private IParser _parser;
+        public GameHandler(IParser parser)
+        {
+            _parser = parser;
+        }
         public IGame currentGame
         {
             get { return currentGame; }
@@ -108,8 +114,9 @@ namespace Tron.Logic.GameLogic
             return currentGame.hasGameEnded;
         }
 
-        public void processMove(IMovement move)
+        public void processMove()
         {
+            var move = _parser.GetNextMovement();
             if (!currentGame.hasGameEnded)
             {
                 var currentPlayer = currentGame.currentPlayer;

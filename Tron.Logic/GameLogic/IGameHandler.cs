@@ -12,7 +12,7 @@ namespace Tron.Logic.GameLogic
         void newGame(List<IPlayer> players, ICoordinate mapSize);
         IMagnitude getMagnitudesFromMove(IMovement move);
         void processMagnitude(IMagnitude magnitude);
-        void processMove(IMovement move);
+        void processMove();
         bool checkLosingConditions(ICoordinate coordinates);
         void removeLosingPlayer();
         bool checkWinningConditions();

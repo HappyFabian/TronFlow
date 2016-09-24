@@ -8,12 +8,13 @@ namespace Tron.Logic.ParserService
 {
     public class Parser : IParser
     {
-        private Dictionary<string, Type> _movementDictionary;
+        
         public readonly IReader _reader;
-        public Parser(IReader reader)
+        private readonly MovementFactory _factory;
+        public Parser(IReader reader, MovementFactory factory)
         {
-            _movementDictionary = MovementsAssembly.Load();
             _reader = reader;
+            _factory = factory;
         }
 
         public IMovement GetNextMovement()
@@ -30,19 +31,9 @@ namespace Tron.Logic.ParserService
             }
             var player = splittedLine[0];
             var movementIdentifier = splittedLine[1];
-            var movement = InstantiateMovement(movementIdentifier);;
+            var movement = _factory.GetMovement(movementIdentifier); ;
             movement.PlayerName = player;
             return movement;
-        }
-
-        private IMovement InstantiateMovement(string identifier)
-        {
-            if (!_movementDictionary.ContainsKey(identifier))
-            {
-                throw new Exception("unknown movement identifier");
-            }
-            var type = _movementDictionary[identifier];
-            return (IMovement) Activator.CreateInstance(type);
         }
     }
 }

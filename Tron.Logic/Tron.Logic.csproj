@@ -48,6 +48,7 @@
     <Compile Include="GameLogic\IPlayer.cs" />
     <Compile Include="GameLogic\Player.cs" />
     <Compile Include="IRenderer.cs" />
+    <Compile Include="MovementFactory.cs" />
     <Compile Include="Movements\Down.cs" />
     <Compile Include="GameLogic\IMagnitude.cs" />
     <Compile Include="GameLogic\IMovement.cs" />

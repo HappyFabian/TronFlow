@@ -31,7 +31,7 @@ namespace Tron.Logic.ParserService
             }
             var player = splittedLine[0];
             var movementIdentifier = splittedLine[1];
-            var movement = _factory.GetMovement(movementIdentifier); 
+            var movement = _factory.GetMovement(movementIdentifier);
             return movement;
         }
     }

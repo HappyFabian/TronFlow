@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    interface IMap
+    public interface IMap
     {
+        ITile defaultTile { get; set; }
         ITile[,] mapArray { get; set; }
         void Prepare(ICoordinate size);
         void markTile(ICoordinate coordinate, ITile newTile);

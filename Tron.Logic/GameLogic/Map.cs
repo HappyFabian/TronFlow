@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    class Map : IMap
+    public class Map : IMap
     {
+        public ITile defaultTile
+        {
+            get{ return defaultTile;  }
+            set{ defaultTile = value; }
+        }
+
         public ITile[,] mapArray
         {
             get{ return mapArray; }

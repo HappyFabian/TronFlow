@@ -44,7 +44,11 @@
     <Compile Include="Decorator\MovementDecorator.cs" />
     <Compile Include="GameLogic\Color.cs" />
     <Compile Include="GameLogic\Coordinate.cs" />
+    <Compile Include="GameLogic\Game.cs" />
+    <Compile Include="GameLogic\GameHandler.cs" />
     <Compile Include="GameLogic\ICoordinate.cs" />
+    <Compile Include="GameLogic\IGame.cs" />
+    <Compile Include="GameLogic\IGameHandler.cs" />
     <Compile Include="GameLogic\IMagnitudeComposite.cs" />
     <Compile Include="GameLogic\IMap.cs" />
     <Compile Include="GameLogic\IPlayer.cs" />

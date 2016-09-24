@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnStartGame = new System.Windows.Forms.Button();
             this.PlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColorColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnStartGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,16 +45,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // btnStartGame
-            // 
-            this.btnStartGame.Location = new System.Drawing.Point(186, 199);
-            this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(75, 23);
-            this.btnStartGame.TabIndex = 1;
-            this.btnStartGame.Text = "Start Game";
-            this.btnStartGame.UseVisualStyleBackColor = true;
-            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // PlayerName
             // 
@@ -74,6 +64,16 @@
             "BLACK",
             "ORANGE"});
             this.ColorColumn.Name = "ColorColumn";
+            // 
+            // btnStartGame
+            // 
+            this.btnStartGame.Location = new System.Drawing.Point(186, 199);
+            this.btnStartGame.Name = "btnStartGame";
+            this.btnStartGame.Size = new System.Drawing.Size(75, 23);
+            this.btnStartGame.TabIndex = 1;
+            this.btnStartGame.Text = "Start Game";
+            this.btnStartGame.UseVisualStyleBackColor = true;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // AddUsersForm
             // 

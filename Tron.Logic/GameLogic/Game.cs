@@ -38,6 +38,7 @@ namespace Tron.Logic.GameLogic
             hasGameEnded = false;
             map.Prepare(size);
             this.players = players;
+            updateCurrentPlayer(players.ElementAt(0));
         }
 
         public void updateCurrentPlayer(IPlayer currentPlayer)

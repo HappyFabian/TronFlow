@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    class Magnitudes : IMagnitudeComposite
+    public class Magnitudes : IMagnitudeComposite
     {
         public List<IMagnitude> magnitudes
         {

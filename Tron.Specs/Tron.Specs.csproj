@@ -60,13 +60,6 @@
       <DependentUpon>FileReaderTests.feature</DependentUpon>
     </Compile>
     <Compile Include="FileReaderTestsSteps.cs" />
-    <Compile Include="GameBoard.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GameBoard.feature</DependentUpon>
-    </Compile>
-    <Compile Include="GameBoard_InitializeBoard_Steps.cs" />
-    <Compile Include="GameBoard_MarkSpot_Steps.cs" />
     <Compile Include="ParserTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,10 +73,6 @@
     <None Include="FileReaderTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FileReaderTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="GameBoard.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GameBoard.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="ParserTests.feature">

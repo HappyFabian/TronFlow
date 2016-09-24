@@ -40,12 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleRenderer.cs" />
-    <Compile Include="GameLogic\Board.cs" />
-    <Compile Include="GameLogic\GameBoard.cs" />
-    <Compile Include="GameLogic\GameMotor.cs" />
-    <Compile Include="GameLogic\IBoard.cs" />
-    <Compile Include="GameLogic\IGameMotor.cs" />
+    <Compile Include="GameLogic\Color.cs" />
+    <Compile Include="GameLogic\Coordinate.cs" />
+    <Compile Include="GameLogic\ICoordinate.cs" />
+    <Compile Include="GameLogic\IMagnitudeComposite.cs" />
     <Compile Include="GameLogic\IPlayer.cs" />
+    <Compile Include="GameLogic\Magnitudes.cs" />
     <Compile Include="GameLogic\Player.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="MovementFactory.cs" />

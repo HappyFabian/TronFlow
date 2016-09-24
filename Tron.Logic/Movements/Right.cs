@@ -9,19 +9,27 @@ namespace Tron.Logic.Movements
 {
     public class Right : IMovement
     {
-        public List<IMagnitude> ReturnMagnitudes()
+        public IMagnitudeComposite movementMagnitudes
         {
-            var magnitudes = new List<IMagnitude>();
-            magnitudes.Add(new Magnitude(1, 0));
-            return magnitudes;
+            get { return movementMagnitudes; }
+            set { movementMagnitudes = value; }
         }
 
+        public void Prepare()
+        {
+            movementMagnitudes.addMagnitude(new Magnitude(new Coordinate(1,0)));
+        }
 
         public string GetIdentifier()
         {
-            return "derecha";
+            return "RIGHT";
         }
 
-        public string PlayerName { get; set; }
+        public IMagnitudeComposite ReturnMagnitudes()
+        {
+            return movementMagnitudes;
+        }
+
+
     }
 }

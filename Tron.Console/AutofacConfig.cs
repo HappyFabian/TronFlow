@@ -13,7 +13,7 @@ namespace Tron.Console
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<Game>().As<IGame>();
+            builder.RegisterType<TronApplication>().As<IApplication>();
             builder.RegisterType<ConsoleRenderer>().As<IRenderer>();
 
             return builder.Build();

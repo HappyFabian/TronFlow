@@ -46,8 +46,8 @@
   <ItemGroup>
     <Compile Include="AutofacConfig.cs" />
     <Compile Include="ConsoleRenderer.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="IGame.cs" />
+    <Compile Include="TronApplication.cs" />
+    <Compile Include="IApplication.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +55,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tron.Logic\Tron.Logic.csproj">
+      <Project>{3a63a932-b1af-4952-a20c-b83cd06f0691}</Project>
+      <Name>Tron.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

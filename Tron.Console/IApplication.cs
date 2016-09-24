@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tron.Console
 {
-    public interface IGame
+    public interface IApplication
     {
         void Run();
     }

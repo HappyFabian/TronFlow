@@ -11,7 +11,7 @@ namespace Tron.ConsoleImplementation
             var container = AutofacConfig.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
-                var game = scope.Resolve<IGame>();
+                var game = scope.Resolve<IApplication>();
                 game.Run();
             }
         }

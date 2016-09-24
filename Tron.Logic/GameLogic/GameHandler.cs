@@ -14,9 +14,22 @@ namespace Tron.Logic.GameLogic
             set{ currentGame = value; }
         }
 
-        public void checkLosingConditions(ICoordinate coordinate)
+        public bool checkLosingConditions(ICoordinate coordinate)
         {
-            throw new NotImplementedException();
+            if(currentGame.map.returnTile(coordinate) != currentGame.map.defaultTile)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool checkWinningConditions()
+        {
+            if(currentGame.players.Count == 1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void endGame()
@@ -35,49 +48,64 @@ namespace Tron.Logic.GameLogic
             currentGame.Prepare(mapSize,players);
         }
 
+        public void removeLosingPlayer()
+        {
+            var nextPlayerIndex = currentGame.players.IndexOf(currentGame.currentPlayer);
+            currentGame.players.Remove(currentGame.currentPlayer);
+
+            if (nextPlayerIndex > currentGame.players.Count() - 1)
+            {
+                nextPlayerIndex = 0;
+            }
+            currentGame.updateCurrentPlayer(currentGame.players.ElementAt(nextPlayerIndex));
+
+        }
+
         public void processMagnitude(IMagnitude magnitude)
         {
-           
            var newCoordinates = currentGame.currentPlayer.currentCoordinate;
-           var magnitudeCoordinates = magnitude.returnValues();
-         
+           var magnitudeCoordinates = magnitude.returnValues();           
            newCoordinates.coordinateX += magnitudeCoordinates.coordinateX;
            newCoordinates.coordinateY += magnitudeCoordinates.coordinateY;
-
             if(newCoordinates.coordinateX > currentGame.map.mapArray.GetUpperBound(0))
-            {
-                newCoordinates.coordinateX = newCoordinates.coordinateX - currentGame.map.mapArray.GetUpperBound(0);
-            }
+            {newCoordinates.coordinateX = newCoordinates.coordinateX - currentGame.map.mapArray.GetUpperBound(0);}
+
             if (newCoordinates.coordinateX < currentGame.map.mapArray.GetLowerBound(0))
-            {
-                newCoordinates.coordinateX =  currentGame.map.mapArray.GetUpperBound(0) - newCoordinates.coordinateX;
-            }
+            {newCoordinates.coordinateX =  currentGame.map.mapArray.GetUpperBound(0) - newCoordinates.coordinateX;}
 
             if (newCoordinates.coordinateY > currentGame.map.mapArray.GetUpperBound(1))
-            {
-                newCoordinates.coordinateY = newCoordinates.coordinateY - currentGame.map.mapArray.GetUpperBound(1);
-            }
+            {newCoordinates.coordinateY = newCoordinates.coordinateY - currentGame.map.mapArray.GetUpperBound(1);}
             if (newCoordinates.coordinateY < currentGame.map.mapArray.GetLowerBound(1))
+            {newCoordinates.coordinateY = currentGame.map.mapArray.GetUpperBound(1) - newCoordinates.coordinateY;}
+
+
+
+            if(!checkLosingConditions(newCoordinates))
+            {currentGame.currentPlayer.updateCoordinate(newCoordinates);}
+            else
             {
-                newCoordinates.coordinateY = currentGame.map.mapArray.GetUpperBound(1) - newCoordinates.coordinateY;
+                removeLosingPlayer();
+                if(checkWinningConditions())
+                {
+                    currentGame.hasGameEnded = true;
+                }
+                
             }
-
-
-
-            //To Implement checkLosingConditions here
-            currentGame.currentPlayer.updateCoordinate(newCoordinates);
         }
 
         public void processMove(IMovement move)
         {
-
-            var currentPlayer = currentGame.currentPlayer;
-            foreach(var mag in move.movementMagnitudes.magnitudes)
+            if (!currentGame.hasGameEnded)
             {
-                currentGame.map.markTile(currentPlayer.currentCoordinate, currentPlayer.playerTrail);
-                processMagnitude(mag);
-                currentGame.map.markTile(currentGame.currentPlayer.currentCoordinate, currentGame.currentPlayer.playerIcon);
+                var currentPlayer = currentGame.currentPlayer;
+                foreach (var mag in move.movementMagnitudes.magnitudes)
+                {
+                    currentGame.map.markTile(currentPlayer.currentCoordinate, currentPlayer.playerTrail);
+                    processMagnitude(mag);
+                    currentGame.map.markTile(currentGame.currentPlayer.currentCoordinate, currentGame.currentPlayer.playerIcon);
+                }
             }
+            
         }
     }
 }

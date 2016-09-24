@@ -39,5 +39,9 @@ namespace Tron.Logic.Decorator
             set { _player.currentCoordinate = value; }
         }
 
+        public void updateCoordinate(ICoordinate newCoordinate)
+        {
+            _player.updateCoordinate(newCoordinate);
+        }
     }
 }

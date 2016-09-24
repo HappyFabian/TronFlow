@@ -8,10 +8,17 @@ namespace Tron.Logic.GameLogic
 {
     public class Game : IGame
     {
+    
         public IPlayer currentPlayer
         {
             get{return currentPlayer;}
             set { currentPlayer = value; }
+        }
+
+        public bool hasGameEnded
+        {
+            get{ return hasGameEnded;}
+            set{ hasGameEnded = value;}
         }
 
         public IMap map
@@ -28,6 +35,7 @@ namespace Tron.Logic.GameLogic
 
         public void Prepare(ICoordinate size, List<IPlayer> players)
         {
+            hasGameEnded = false;
             map.Prepare(size);
             this.players = players;
         }

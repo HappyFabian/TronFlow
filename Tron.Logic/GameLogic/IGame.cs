@@ -8,6 +8,7 @@ namespace Tron.Logic.GameLogic
 {
     public interface IGame
     {
+       bool hasGameEnded { get; set; }
         IPlayer currentPlayer { get; set; }
         List<IPlayer> players { get; set; }
         IMap map { get; set; }

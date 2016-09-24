@@ -8,6 +8,12 @@ namespace Tron.Logic.GameLogic
 {
     public class Map : IMap
     {
+        public ITile defaultTile
+        {
+            get{ return defaultTile;  }
+            set{ defaultTile = value; }
+        }
+
         public ITile[,] mapArray
         {
             get{ return mapArray; }

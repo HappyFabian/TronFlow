@@ -13,7 +13,9 @@ namespace Tron.Logic.GameLogic
         IMagnitude getMagnitudesFromMove(IMovement move);
         void processMagnitude(IMagnitude magnitude);
         void processMove(IMovement move);
-        void checkLosingConditions(ICoordinate coordinates);
+        bool checkLosingConditions(ICoordinate coordinates);
+        void removeLosingPlayer();
+        bool checkWinningConditions();
 
         void endGame();
         

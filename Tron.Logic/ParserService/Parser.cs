@@ -30,7 +30,7 @@ namespace Tron.Logic.ParserService
             }
             var player = splittedLine[0];
             var movementIdentifier = splittedLine[1];
-            var movement = InstantiateMovement(movementIdentifier);;
+            var movement = InstantiateMovement(movementIdentifier);
             movement.PlayerName = player;
             return movement;
         }

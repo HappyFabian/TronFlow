@@ -92,6 +92,21 @@ namespace Tron.Logic.GameLogic
                 
             }
         }
+        public void endTurn()
+        {
+            var nextPlayerIndex = currentGame.players.IndexOf(currentGame.currentPlayer) + 1;
+            if (nextPlayerIndex > currentGame.players.Count() - 1)
+            {
+                nextPlayerIndex = 0;
+            }
+            currentGame.updateCurrentPlayer(currentGame.players.ElementAt(nextPlayerIndex));
+
+        }
+
+        public bool hasGameEnded()
+        {
+            return currentGame.hasGameEnded;
+        }
 
         public void processMove(IMovement move)
         {

@@ -17,6 +17,8 @@ namespace Tron.Logic.GameLogic
         void removeLosingPlayer();
         bool checkWinningConditions();
 
+        void endTurn();
+        bool hasGameEnded();
         void endGame();
         
         

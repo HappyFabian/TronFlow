@@ -8,8 +8,8 @@ namespace Tron.Logic.GameLogic
 {
     public class Magnitude : IMagnitude
     {
-        public int XMagnitude { get; }
-        public int YMagnitude { get; }
+        public int XMagnitude { set;  get; }
+        public int YMagnitude { set;  get; }
 
         public Magnitude(int xmagnitude, int ymagnitude)
         {

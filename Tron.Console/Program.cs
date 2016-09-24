@@ -1,11 +1,19 @@
-﻿using System;
+﻿using Autofac;
+using System;
+using Tron.Console;
 
 namespace Tron.ConsoleImplementation
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var container = AutofacConfig.Configure();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var game = scope.Resolve<IGame>();
+                game.Run();
+            }
         }
     }
 }

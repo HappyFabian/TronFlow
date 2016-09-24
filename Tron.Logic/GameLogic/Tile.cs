@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Tron.Logic.GameLogic
 {
-    public interface ITile
+    public class Tile : ITile
     {
-        Color color { get; set; }
+        public Color color { get; set; }
+        public Tile(Color color)
+        {
+            this.color = color;
+        }
     }
 }

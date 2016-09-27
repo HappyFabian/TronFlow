@@ -42,6 +42,7 @@ namespace Tron.Logic.GameLogic
             hasGameEnded = false;
             var tile = new Tile();
             tile.value = '_';
+            map = new Map();
             map.defaultTile = tile;
             map.Prepare(size);
             this.players = players;

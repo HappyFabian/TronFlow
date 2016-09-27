@@ -8,16 +8,18 @@ namespace Tron.Logic.GameLogic
 {
     public class Coordinate : ICoordinate
     {
+        private int _coordinateX;
+        private int _coordinateY;
         public int coordinateX
         {
-            get { return coordinateX; }
-            set { coordinateX = value;}
+            get { return _coordinateX; }
+            set { _coordinateX = value;}
         }
 
         public int coordinateY
         {
-            get { return coordinateY; }
-            set { coordinateY = value;}
+            get { return _coordinateY; }
+            set { _coordinateY = value;}
         }
 
         public Coordinate(int x, int y)

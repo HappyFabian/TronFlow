@@ -8,16 +8,19 @@ namespace Tron.Logic.GameLogic
 {
     public class Map : IMap
     {
+        private ITile _defaultTile;
+        private ITile[,] _mapArray;
+
         public ITile defaultTile
         {
-            get{ return defaultTile;  }
-            set{ defaultTile = value; }
+            get{ return _defaultTile;  }
+            set{ _defaultTile = value; }
         }
 
         public ITile[,] mapArray
         {
-            get{ return mapArray; }
-            set{ mapArray = value; }
+            get{ return _mapArray; }
+            set{ _mapArray = value; }
         }
 
         public void markTile(ICoordinate coordinate, ITile newTile)
@@ -28,7 +31,14 @@ namespace Tron.Logic.GameLogic
 
         public void Prepare(ICoordinate size)
         {
-            mapArray = new ITile[size.coordinateX, size.coordinateY];
+            mapArray = new Tile[size.coordinateX, size.coordinateY];
+            for(int i = 0; i < size.coordinateX; i++)
+            {
+                for(int j = 0; j < size.coordinateY; j++)
+                {
+                    mapArray[i, j] = defaultTile;
+                }
+            }
         }
 
         public ITile returnTile(ICoordinate coordinate)

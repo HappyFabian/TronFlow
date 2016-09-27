@@ -8,10 +8,12 @@ namespace Tron.Logic.GameLogic
 {
     public class Tile : ITile
     {
-        public Color color { get; set; }
-        public Tile(Color color)
+        private char _value;
+
+        public char value
         {
-            this.color = color;
+            get{return _value;}
+            set{_value = value; }
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Tron.Logic.GameLogic
 {
     public interface ITile
     {
-        Color color { get; set; }
+         char value { get; set; }
     }
 }

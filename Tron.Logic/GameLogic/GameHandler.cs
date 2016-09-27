@@ -10,14 +10,16 @@ namespace Tron.Logic.GameLogic
     public class GameHandler : IGameHandler
     {
         private IParser _parser;
+        private IGame _currentGame;
+
         public GameHandler(IParser parser)
         {
             _parser = parser;
         }
         public IGame currentGame
         {
-            get { return currentGame; }
-            set{ currentGame = value; }
+            get { return _currentGame; }
+            set{ _currentGame = value; }
         }
 
         public List<IPlayer> ReturnPlayers()

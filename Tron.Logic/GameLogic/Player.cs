@@ -8,6 +8,12 @@ namespace Tron.Logic.GameLogic
 {
     public class Player : IPlayer
     {
+
+        private ICoordinate _currentCoordinate;
+        private ITile _playerIcon;
+        private string _playerName;
+        private ITile _playerTrail;
+
         public Player(ICoordinate startingCoordinate, string playerName, string color)
         {
             this.currentCoordinate = startingCoordinate;
@@ -18,26 +24,26 @@ namespace Tron.Logic.GameLogic
 
         public ICoordinate currentCoordinate
         {
-            get {return currentCoordinate;}
-            set {currentCoordinate = value;}
+            get {return _currentCoordinate;}
+            set {_currentCoordinate = value;}
         }
 
         public ITile playerIcon
         {
-            get { return playerIcon; }
-            set { playerIcon = value; }
+            get { return _playerIcon; }
+            set { _playerIcon = value; }
         }
 
         public string playerName
         {
-            get { return playerName;}
-            set {playerName = value;}
+            get { return _playerName;}
+            set {_playerName = value;}
         }
 
         public ITile playerTrail
         {
-            get { return playerTrail; }
-            set{ playerTrail = value;}
+            get { return _playerTrail; }
+            set{ _playerTrail = value;}
         }
 
         public void updateCoordinate(ICoordinate newCoordinate)

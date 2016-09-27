@@ -9,10 +9,12 @@ namespace Tron.Logic.Movements
 {
     public class Right : IMovement
     {
+        private IMagnitudeComposite _movementMagnitudes;
+
         public IMagnitudeComposite movementMagnitudes
         {
-            get { return movementMagnitudes; }
-            set { movementMagnitudes = value; }
+            get { return _movementMagnitudes; }
+            set { _movementMagnitudes = value; }
         }
 
         public void Prepare()

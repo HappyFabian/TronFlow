@@ -19,6 +19,7 @@ namespace Tron.Logic.Movements
 
         public void Prepare()
         {
+            movementMagnitudes = new Magnitudes();
             movementMagnitudes.addMagnitude(new Magnitude(new Coordinate(1,0)));
         }
 

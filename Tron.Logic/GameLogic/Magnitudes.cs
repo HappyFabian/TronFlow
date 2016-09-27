@@ -8,7 +8,8 @@ namespace Tron.Logic.GameLogic
 {
     public class Magnitudes : IMagnitudeComposite
     {
-        private List<IMagnitude> _magnitudes;
+        private List<IMagnitude> _magnitudes = new List<IMagnitude>();
+
 
         public List<IMagnitude> magnitudes
         {

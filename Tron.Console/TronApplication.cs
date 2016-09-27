@@ -10,11 +10,15 @@ namespace Tron.Console
     public class TronApplication : IApplication
     {
         private IRenderer _renderer;
+        private IGameHandler _game;
         private List<IPlayer> _players;
+        private int _height;
+        private int _width;
 
-        public TronApplication(IRenderer renderer)
+        public TronApplication(IRenderer renderer, IGameHandler game)
         {
             _renderer = renderer;
+            _game = game;
         }
 
         public void Run()
@@ -39,10 +43,10 @@ namespace Tron.Console
         private void BoardSizeSelectionScreen()
         {
             System.Console.WriteLine("Enter board width:");
-            int height = Int32.Parse(System.Console.ReadLine());
+            _height = Int32.Parse(System.Console.ReadLine());
             System.Console.WriteLine("Enter board height:");
-            int width = Int32.Parse(System.Console.ReadLine());
-            _renderer.SetBoardSize(width, height);
+            _width = Int32.Parse(System.Console.ReadLine());
+            _renderer.SetBoardSize(_width, _height);
             AddPlayersScreen();
         }
 
@@ -56,6 +60,7 @@ namespace Tron.Console
                 if (input == 1)
                     NewPlayerScreen();
             }
+            _game.newGame(_players, new Coordinate(_width, _height));
             GameScreen();
         }
 
@@ -68,7 +73,7 @@ namespace Tron.Console
             }
             System.Console.WriteLine("Enter Player Name:");
             string name = System.Console.ReadLine();
-            _players.add(new Player(GetNextCoordinate(), name, t.Color));
+            _players.Add(new Player(GetNextCoordinate(), name, GetNextColor()));
         }
 
         private ICoordinate GetNextCoordinate()
@@ -77,22 +82,47 @@ namespace Tron.Console
             int y = 0;
             if (_players.Count() == 2)
             {
-
+                x = _width - 1;
             }
             else if (_players.Count() == 3)
             {
-
+                y = _height - 1;
             }
             else if (_players.Count() == 4)
             {
-
+                x = _width - 1;
+                y = _height - 1;
             }
             return new Coordinate(x, y);
         }
 
+        private string GetNextColor()
+        {
+            if (_players.Count() == 2)
+            {
+                return "Blue";
+            }
+            else if (_players.Count() == 3)
+            {
+                return "Green";
+            }
+            else if (_players.Count() == 4)
+            {
+                return "Yellow";
+            }
+            return "Red";
+        }
+
         private void GameScreen()
         {
-            _renderer.RenderBoard();
+            bool hasGameEnded = false;
+            while (hasGameEnded)
+            {
+                _renderer.RenderBoard(_game.ReturnPlayers());
+                _game.processMove();
+                _game.endTurn();
+                hasGameEnded = _game.hasGameEnded();
+            }
         }
     }
 }

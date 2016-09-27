@@ -6,9 +6,9 @@ namespace Tron.Logic.ParserService
     {
         private readonly StreamReader _streamReader;
 
-        public FileReader(StreamReader streamReader)
+        public FileReader()
         {
-            _streamReader = streamReader;
+            _streamReader = new StreamReader("movimientos.txt") ;
         }
         public void RewindToBeggining()
         {

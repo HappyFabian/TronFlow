@@ -16,6 +16,7 @@ namespace Tron.Logic.GameLogic
         bool checkLosingConditions(ICoordinate coordinates);
         void removeLosingPlayer();
         bool checkWinningConditions();
+        List<IPlayer> ReturnPlayers();
 
         void endTurn();
         bool hasGameEnded();

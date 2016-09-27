@@ -10,7 +10,7 @@ namespace Tron.Console
     public interface IRenderer
     {
         void SetBoardSize(int width, int height);
-        void RenderBoard();
+        void RenderBoard(List<IPlayer> players);
         void AddPlayers();
         void Menu();
         void ListPlayers(List<IPlayer> players);

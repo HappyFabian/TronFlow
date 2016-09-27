@@ -7,7 +7,7 @@ using Tron.Logic.ParserService;
 
 namespace Tron.Logic.GameLogic
 {
-    class GameHandler : IGameHandler
+    public class GameHandler : IGameHandler
     {
         private IParser _parser;
         public GameHandler(IParser parser)
@@ -18,6 +18,11 @@ namespace Tron.Logic.GameLogic
         {
             get { return currentGame; }
             set{ currentGame = value; }
+        }
+
+        public List<IPlayer> ReturnPlayers()
+        {
+            return currentGame.players;
         }
 
         public bool checkLosingConditions(ICoordinate coordinate)

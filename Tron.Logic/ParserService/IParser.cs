@@ -1,7 +1,7 @@
 using Tron.Logic.GameLogic;
 namespace Tron.Logic.ParserService
 {
-    interface IParser
+    public interface IParser
     {
         IMovement GetNextMovement();
     }

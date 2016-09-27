@@ -10,6 +10,7 @@ namespace Tron.Console
     public class TronApplication : IApplication
     {
         private IRenderer _renderer;
+        private List<IPlayer> _players;
 
         public TronApplication(IRenderer renderer)
         {
@@ -19,7 +20,6 @@ namespace Tron.Console
         public void Run()
         {
             MenuScreen();
-            _renderer.SetBoardSize(5,5);
         }
 
         private void MenuScreen()
@@ -48,16 +48,49 @@ namespace Tron.Console
 
         private void AddPlayersScreen()
         {
-            List<IPlayer> players = new List<IPlayer>();
-            string input = "";
-            do{
+            _players = new List<IPlayer>();
+            int input = 0;
+            while(input != 2){
                 _renderer.AddPlayers();
-                input = System.Console.ReadLine();
-            }while(!input.Equals("done"));
-            GameScreen(players);
+                input = Int32.Parse(System.Console.ReadLine());
+                if (input == 1)
+                    NewPlayerScreen();
+            }
+            GameScreen();
         }
 
-        private void GameScreen(List<IPlayer> players)
+        private void NewPlayerScreen()
+        {
+            if (_players.Count() == 4)
+            {
+                System.Console.WriteLine("4 Players max");
+                return;
+            }
+            System.Console.WriteLine("Enter Player Name:");
+            string name = System.Console.ReadLine();
+            _players.add(new Player(GetNextCoordinate(), name, t.Color));
+        }
+
+        private ICoordinate GetNextCoordinate()
+        {
+            int x = 0;
+            int y = 0;
+            if (_players.Count() == 2)
+            {
+
+            }
+            else if (_players.Count() == 3)
+            {
+
+            }
+            else if (_players.Count() == 4)
+            {
+
+            }
+            return new Coordinate(x, y);
+        }
+
+        private void GameScreen()
         {
             _renderer.RenderBoard();
         }

@@ -56,7 +56,8 @@ namespace Tron.Console
 
         public void AddPlayers()
         {
-            System.Console.WriteLine("Write new player name and enter to add write 'done' to finish");
+            System.Console.WriteLine("1. Add New Player");
+            System.Console.WriteLine("2. Done");
         }
 
         public void ListPlayers(List<IPlayer> players)
